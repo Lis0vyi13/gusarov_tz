@@ -1,0 +1,37 @@
+@import "../../index.css";
+
+.inputGroup {
+  margin-bottom: 16px;
+  font-family: var(--rubik-font);
+}
+
+.inputGroupContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 3px;
+}
+
+/* positions */
+.label-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.label-side label {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  text-overflow: -o-ellipsis-lastline;
+  word-break: break-word;
+}
+
+.label-top {
+  flex-direction: column;
+  align-items: flex-start;
+}

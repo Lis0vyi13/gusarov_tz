@@ -1,0 +1,17 @@
+@import "../../index.css";
+
+.helperText {
+  color: var(--rubik-text-tertiary);
+  font-size: 12px;
+  font-family: var(--rubik-font);
+  width: 100%;
+  word-break: break-word;
+  text-overflow: -o-ellipsis-lastline;
+}
+
+.helperText.error {
+  color: var(--rubik-fg-error-primary);
+}
+.helperText.disabled {
+  color: var(--rubik-text-disabled);
+}
