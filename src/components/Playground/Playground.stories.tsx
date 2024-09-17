@@ -21,8 +21,8 @@ const withColorScheme = (Story: StoryFn) => {
       <Flex>
         <Story />
       </Flex>
-      <Flex className="dark-mode">
-        <Story />
+      <Flex className="bg-black">
+        <Story darkMode={true} />
       </Flex>
     </div>
   );
@@ -74,9 +74,10 @@ export const Default: Story = {
     position: "top",
   },
 
-  render: (args) => (
+  render: (args, { darkMode }) => (
     <InputGroup
       {...args}
+      darkMode={darkMode}
       iconBefore={args.iconBefore ? <Search /> : undefined}
       iconAfter={args.iconAfter ? <Help /> : undefined}
       infoIcon={args.infoIcon ? <Info /> : undefined}

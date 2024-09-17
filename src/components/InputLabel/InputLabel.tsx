@@ -14,6 +14,7 @@ interface InputLabelProps {
   optional?: boolean;
   position?: "top" | "side";
   size?: 24 | 32 | 36 | 40 | 44 | 48;
+  darkMode?: boolean;
 }
 
 const labelSizes = {
@@ -35,17 +36,22 @@ const InputLabel = ({
   disabled = false,
   optional = false,
   position = "top",
+  darkMode,
   size = 36,
 }: InputLabelProps) => {
+  const labelWrapperClassName = clsx(styles.labelWrapper, styles[position]);
+
   const infoIconClassName = clsx(styles.infoIcon, {
     [styles.infoIconHover]: infoIconVisibility === "hover",
   });
 
   const labelClassName = clsx(styles.label, labelSizes[size], {
     [styles.labelDisabled]: disabled,
+    "dark-mode": darkMode,
   });
+
   return (
-    <div className={`${styles.labelWrapper} ${styles[position]}`}>
+    <div className={labelWrapperClassName}>
       <label className={labelClassName} htmlFor={htmlFor}>
         {label}&nbsp;
         {optional && <span className={styles.optionalLabel}>(optional)&nbsp;</span>}

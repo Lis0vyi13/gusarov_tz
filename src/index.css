@@ -60,9 +60,11 @@ img {
 
 body {
   padding: 10px;
-  background-color: #f4f5f7;
 }
 
+.bg-black {
+  background-color: #131316;
+}
 .dark-mode {
   --rubik-primary: #fafafa;
   --rubik-fg-quinary: #70707b;
@@ -78,5 +80,4 @@ body {
   --rubik-text-disabled: #3f3f46;
   --rubik-tooltip-text: #000;
   --rubik-bg-primary: #131316;
-  background-color: var(--rubik-bg-primary);
 }

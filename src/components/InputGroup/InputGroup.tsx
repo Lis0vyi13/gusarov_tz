@@ -5,6 +5,7 @@ import InputText from "../InputText/InputText";
 import InputAnnotation from "../InputAnnotation/InputAnnotation";
 
 import styles from "./InputGroup.module.css";
+import clsx from "clsx";
 
 interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -25,6 +26,7 @@ interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
   alignment?: "left" | "right";
   shortkey?: boolean;
   width?: number | string;
+  darkMode?: boolean;
 }
 
 const InputGroup = ({
@@ -45,14 +47,25 @@ const InputGroup = ({
   fieldSize = 36,
   alignment = "left",
   shortkey = false,
+  darkMode,
   width = "323px",
   ...props
 }: InputGroupProps) => {
   const { required, disabled } = { ...props };
   const formattedWidth = typeof width === "number" ? width + "px" : width;
+
+  const inputGroupClassName = clsx(styles.inputGroup, {
+    "dark-mode": darkMode,
+  });
+
+  const inputGroupContainerClassName = clsx(
+    styles.inputGroupContainer,
+    styles[`label-${position}`],
+  );
+
   return (
-    <div style={{ width: formattedWidth }} className={`${styles.inputGroup} `}>
-      <div className={`${styles.inputGroupContainer} ${styles[`label-${position}`]}`}>
+    <div style={{ width: formattedWidth }} className={inputGroupClassName}>
+      <div className={inputGroupContainerClassName}>
         <InputLabel
           label={label}
           htmlFor={inputId}

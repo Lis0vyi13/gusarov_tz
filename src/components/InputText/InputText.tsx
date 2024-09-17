@@ -13,6 +13,7 @@ interface InputTextProps extends InputHTMLAttributes<HTMLInputElement> {
   alignment?: "left" | "right";
   shortkey?: boolean;
   width?: string;
+  darkMode?: boolean;
 }
 
 const inputSizes = {
@@ -34,14 +35,16 @@ const InputText = ({
   alignment = "left",
   placeholder = "Enter text...",
   shortkey,
+  darkMode,
   width = "323px",
   ...props
 }: InputTextProps) => {
   const inputWrapperClassName = clsx(styles.inputWrapper, {
     [styles.sideInputWrapper]: position === "side",
+    "dark-mode": darkMode,
   });
 
-  const sideInputWidth = "64px";
+  const SIDE_INPUT_WIDTH = "64px";
 
   const inputClassName = clsx(
     styles.input,
@@ -60,7 +63,7 @@ const InputText = ({
 
   return (
     <div
-      style={{ width: position === "top" ? width : sideInputWidth }}
+      style={{ width: position === "top" ? width : SIDE_INPUT_WIDTH }}
       className={inputWrapperClassName}
     >
       <div className={styles.inputContainer}>
