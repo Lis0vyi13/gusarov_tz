@@ -32,26 +32,6 @@ const meta: Meta<typeof InputGroup> = {
   component: InputGroup,
   tags: ["autodocs"],
   decorators: [withColorScheme],
-  argTypes: {
-    label: { control: "text" },
-    inputId: { control: "text" },
-    placeholder: { control: "text" },
-    helperText: { control: "text" },
-    errorMessage: { control: "text" },
-    iconBefore: { control: "boolean" },
-    iconAfter: { control: "boolean" },
-    optional: { control: "boolean" },
-    infoIcon: { control: "boolean" },
-    infoIconVisibility: { control: "radio", options: ["always", "hover"] },
-    tooltipText: { control: "text" },
-    position: { control: "radio", options: ["top", "side"] },
-    fieldSize: { control: "radio", options: [24, 32, 36, 40, 44, 48] },
-    quiet: { control: "boolean" },
-    variants: { control: "radio", options: ["fill", "outline"] },
-    alignment: { control: "radio", options: ["left", "right"] },
-    shortkey: { control: "boolean" },
-    width: { control: "text" },
-  },
 };
 
 export default meta;
